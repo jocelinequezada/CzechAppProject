@@ -9,24 +9,7 @@ import openai
 openai.api_key = st.secrets["OPENAI_API_KEY"] if "OPENAI_API_KEY" in st.secrets else "your-openai-api-key"
 
 st.title("CzechMate Translator")
-
-PRONUNCIATION_MAP = {
-    "š": "sh",
-    "ž": "zh",
-    "č": "ch",
-    "ř": "rzh",
-    "ě": "ye",
-    "á": "a",
-    "é": "e",
-    "í": "i",
-    "ó": "o",
-    "ú": "u",
-    "ů": "u",
-    "ď": "d",
-    "ť": "t",
-    "ň": "n",
-}
-# Map Czech diacritics to pronunciation approximations
+# Czech diacritics to pronunciation approximations
 PRONUNCIATION_MAP = {
     "š": "sh",
     "ž": "zh",
@@ -76,8 +59,8 @@ def translate_with_openai(text, source_lang, target_lang):
 
 
 # User input
-text_input = st.text_input("Enter Czech or English text:")
-direction = st.selectbox("Translation Direction", ["Czech to English", "English to Czech"])
+# text_input = st.text_input("Enter Czech or English text:")
+# direction = st.selectbox("Translation Direction", ["Czech to English", "English to Czech"])
 
 def translate_with_openai(text, source_lang, target_lang):
     prompt = f"Translate this from {source_lang} to {target_lang}: {text}"
